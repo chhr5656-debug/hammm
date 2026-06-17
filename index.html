@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Brown Network (Private) Limited</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            color: #2c2520;
+            background-color: #fdfbf7;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(43, 31, 23, 0.98);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid #d4a373; /* Amber Gold Accent */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: #d4a373;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #f5f0eb;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #d4a373;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(43, 31, 23, 0.75), rgba(43, 31, 23, 0.75)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+            height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 35px;
+            font-weight: 300;
+            color: #f5f0eb;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d4a373;
+            color: #2b1f17;
+            padding: 12px 35px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background: #e5b98f;
+            box-shadow: 0 4px 20px rgba(212, 163, 115, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Corporate Profile Section */
+        .profile-section {
+            padding: 90px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #2b1f17;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: #d4a373;
+            margin: 12px auto 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #faf7f2;
+            padding: 35px 20px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(43, 31, 23, 0.03);
+            border-bottom: 4px solid #e6dfd5;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: #d4a373;
+            box-shadow: 0 8px 25px rgba(43, 31, 23, 0.08);
+        }
+
+        .card h3 {
+            font-size: 0.85rem;
+            color: #8a7a6e;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #2b1f17;
+        }
+
+        /* Office Location Section */
+        .info-section {
+            padding: 70px 0;
+            background: #2b1f17;
+            color: #fff;
+            text-align: center;
+        }
+
+        .info-section h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: #d4a373;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-section p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            font-weight: 300;
+            color: #e5dfd9;
+        }
+
+        .tax-badge {
+            display: inline-block;
+            background: #3a2b20;
+            padding: 10px 25px;
+            border-radius: 4px;
+            border-left: 4px solid #d4a373;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: #f5f0eb;
+        }
+
+        .tax-badge strong {
+            color: #d4a373;
+        }
+
+        /* Footer */
+        footer {
+            background: #1f150f;
+            color: #706259;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 0.85rem;
+            border-top: 1px solid #2b1f17;
+        }
+
+        footer p span {
+            color: #a8998f;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            nav ul li a {
+                margin: 0 10px;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .hero-content p {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">The Brown <span>Network</span></div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Corporate Profile</a></li>
+                <li><a href="#location">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content container">
+            <h1>The Brown Network</h1>
+            <p>Connecting Enterprises with Corporate Excellence and Digital Innovation.</p>
+            <a href="#profile" class="btn">Company Profile</a>
+        </div>
+    </section>
+
+    <!-- Corporate Profile Section -->
+    <section id="profile" class="profile-section">
+        <div class="container">
+            <h2 class="section-title">Corporate Profile</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Registered Name</h3>
+                    <p>The Brown Network (Private) Limited</p>
+                </div>
+                <div class="card">
+                    <h3>Registration Number</h3>
+                    <p>0191643</p>
+                </div>
+                <div class="card">
+                    <h3>Incorporation Date</h3>
+                    <p>31-December-2021</p>
+                </div>
+                <div class="card">
+                    <h3>DUNS ID Number</h3>
+                    <p>850406707</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Address & Tax Jurisdiction Section -->
+    <section id="location" class="info-section">
+        <div class="container">
+            <h3>Registered Head Office</h3>
+            <p>3rd floor, Awan Arcade Bahria Town Phase VII Islamabad, 45600 Pakistan</p>
+            
+            <div class="tax-badge">
+                Tax Jurisdiction: <strong>CRO Islamabad</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 <span>The Brown Network (Private) Limited</span>. All Corporate Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
